@@ -1,4 +1,6 @@
 package com.example.CadastroFuncionarios.Objetivos;
 
-public class ObjetivosRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ObjetivosRepository extends JpaRepository<ObjetivosModel, Long> {
 }
