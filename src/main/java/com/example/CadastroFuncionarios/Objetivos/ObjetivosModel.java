@@ -1,6 +1,7 @@
 package com.example.CadastroFuncionarios.Objetivos;
 
 import com.example.CadastroFuncionarios.Funcinarios.FuncionarioModel;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +23,6 @@ public class ObjetivosModel {
     private String descricao;
 
     @OneToMany(mappedBy = "objetivosModels")
+    @JsonBackReference
     private List<FuncionarioModel> funcionarioModel;
 }
