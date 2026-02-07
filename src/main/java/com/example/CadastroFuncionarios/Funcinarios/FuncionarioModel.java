@@ -1,6 +1,7 @@
 package com.example.CadastroFuncionarios.Funcinarios;
 
 import com.example.CadastroFuncionarios.Objetivos.ObjetivosModel;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,6 +30,7 @@ public class FuncionarioModel {
 
     @ManyToOne
     @JoinColumn(name = "tb_objetivos")
+    @JsonManagedReference
     private ObjetivosModel objetivosModels;
 
 
