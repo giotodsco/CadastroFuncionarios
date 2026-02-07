@@ -3,7 +3,7 @@ package com.example.CadastroFuncionarios.Funcinarios;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("funcionarios")
 public class FuncionarioController {
 
     // Adicionar Funcionario (CREATE)
