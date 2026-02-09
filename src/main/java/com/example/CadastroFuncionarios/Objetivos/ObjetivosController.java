@@ -1,11 +1,18 @@
 package com.example.CadastroFuncionarios.Objetivos;
 
 
+import com.example.CadastroFuncionarios.Funcinarios.FuncionarioModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("objetivos")
 public class ObjetivosController {
+
+    @Autowired
+    private ObjetivosService service;
 
     //  CREATE
     @PostMapping("/createObj")
@@ -14,14 +21,14 @@ public class ObjetivosController {
     }
 
     // READ
-    @GetMapping("/getAllObj")
-    public String getAllObj(){
-        return "getAllObj";
+    @GetMapping("/find/all")
+    public List<ObjetivosModel> getAllObj(){
+        return service.allObjects();
     }
     // READ PER ID
-    @GetMapping("/getIdObj")
-    public String getIdObj(){
-        return "getIdObj";
+    @GetMapping("/find/{id}")
+    public ObjetivosModel getIdObj(@PathVariable Long id){
+        return service.listarObjects(id);
     }
 
     // UPDATE
