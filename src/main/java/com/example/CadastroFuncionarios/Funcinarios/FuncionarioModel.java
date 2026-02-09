@@ -1,6 +1,7 @@
 package com.example.CadastroFuncionarios.Funcinarios;
 
 import com.example.CadastroFuncionarios.Objetivos.ObjetivosModel;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ import java.util.List;
 public class FuncionarioModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -30,7 +31,7 @@ public class FuncionarioModel {
 
     @ManyToOne
     @JoinColumn(name = "tb_objetivos")
-    @JsonManagedReference
+    @JsonBackReference
     private ObjetivosModel objetivosModels;
 
 
