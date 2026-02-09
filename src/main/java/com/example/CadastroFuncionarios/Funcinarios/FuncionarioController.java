@@ -19,14 +19,14 @@ public class FuncionarioController {
     }
 
     // Procurar Funcionario por ID (READ)
-    @GetMapping ("/findid")
-    public String findFuncionarioId(){
-        return "find";
+    @GetMapping ("/find/{id}")
+    public FuncionarioModel findFuncionarioId(@PathVariable Long id){
+        return service.listarPorId(id);
     }
 
 
     // Mostrar Funcionarios (READ)
-    @GetMapping ("/all")
+    @GetMapping ("/find/all")
     public List<FuncionarioModel> findFuncionariosAll(){
         return service.listarTodos();
     }
